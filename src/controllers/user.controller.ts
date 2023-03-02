@@ -16,6 +16,9 @@ export const getOneUser = async (req:Request, res:Response) => {
     let user = await prisma.user.findFirst({
         where: {
             id: id
+        },
+        include: {
+            blogs: true
         }
     });
 

@@ -120,13 +120,13 @@ export const deleteBlog = async(req:Request, res:Response) => {
 // DELETE BLOGS OF USER
 export const deleteUserBlog = async(req:Request, res:Response) => {
 
-    const { userId } = req.params
+    const { id } = req.params
 
     try {
 
         let blogs = await prisma.blog.deleteMany({
             where: {
-                userId: userId
+                userId: id
             }
         });
 
